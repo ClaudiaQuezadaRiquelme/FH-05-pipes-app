@@ -1,5 +1,5 @@
 import { DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-basic-page',
@@ -15,4 +15,15 @@ export default class BasicPageComponent {
   fullName  = signal('MoCHi mOcHI zuNdA');
 
   customDate = signal(new Date());
+
+  tickingDateEffect = effect( (onCleanUp) => {
+    const interval = setInterval( () => {
+      this.customDate.set( new Date() );
+      console.log('Tick.');
+    }, 1000);
+
+    onCleanUp( () => { // stop interval
+      clearInterval(interval);
+    })
+  });
 }
