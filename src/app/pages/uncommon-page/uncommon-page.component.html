@@ -14,7 +14,18 @@
         (click)="deleteBeing()"
         [disabled]="clients().length === 0"
         class="btn btn-primary"
-    >Borrar ser</button>
+    >Borrar cliente</button>
+  </app-card>
+
+  <app-card title="SlicePipe" >
+    <b>Original</b>
+    <p class="text-primary">{{clients().join(", ")}}</p>
+    <b>Slice 0:2</b>
+    <p class="text-primary">{{clients() | slice:0:2}}</p>
+    <b>Slice 3:6</b>
+    <p class="text-primary">{{clients() | slice:3:6}}</p>
+    <b>Slice 1:-4</b>
+    <p class="text-primary">{{clients() | slice:1:-4}}</p>
   </app-card>
 </div>
 
