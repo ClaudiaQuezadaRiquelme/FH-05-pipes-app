@@ -3,12 +3,15 @@ import { ToggleCasePipe } from '../../pipes/toggle-case.pipe';
 import { Hero } from '../../interfaces/hero.interface';
 import { heroes } from '../../data/heroes.data';
 import { CanFlyPipe } from '../../pipes/can-fly.pipe';
+import { ColorMapPipe, ColorPipe } from '../../pipes/color.pipe';
 
 @Component({
   selector: 'app-custom-page',
   imports: [
     ToggleCasePipe,
     CanFlyPipe,
+    ColorPipe,
+    ColorMapPipe,
   ],
   templateUrl: './custom-page.component.html',
 })
