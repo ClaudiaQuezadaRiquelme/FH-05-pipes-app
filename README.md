@@ -2,6 +2,10 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
 
+# Deploy URL
+
+[fh-05-pipes-app](https://fh-05-pipes-app.netlify.app/basic)
+
 ## Development server
 
 To start a local development server, run:
