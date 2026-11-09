@@ -7,6 +7,7 @@ import { ColorMapPipe, ColorPipe } from '../../pipes/color.pipe';
 import { TitleCasePipe } from '@angular/common';
 import { CreatorPipe } from '../../pipes/creator.pipe';
 import { HeroSortByPipe } from '../../pipes/hero-sort-by.pipe';
+import { HeroFilterPipe } from '../../pipes/hero-filter.pipe';
 
 @Component({
   selector: 'app-custom-page',
@@ -18,6 +19,7 @@ import { HeroSortByPipe } from '../../pipes/hero-sort-by.pipe';
     CreatorPipe,
     TitleCasePipe,
     HeroSortByPipe,
+    HeroFilterPipe,
   ],
   templateUrl: './custom-page.component.html',
 })
@@ -26,6 +28,7 @@ export default class CustomPageComponent {
   toggle = signal<boolean>(false);
   heroes = signal<Hero[]>(heroes);
   sortBy = signal<keyof Hero | null>(null);
+  searchQuery = signal<string>('');
 
   togglePlay():boolean {
     this.toggle.update( value => !value );
