@@ -60,10 +60,17 @@
               class="text-xs w-44"
               [style.color]="hero.color | colorMap "
             >
-              {{ hero.color |colorPipe }}
+              {{ hero.color | colorPipe | titlecase }}
             </span>
           </td>
-          <td>{{ hero.creator }}</td>
+          <td>
+            <span
+              [class.text-primary]="hero.creator === 0"
+              [class.text-accent]="hero.creator === 1"
+            >
+              {{ hero.creator | creatorPipe }}
+            </span>
+          </td>
         </tr>
       }
     </tbody>
